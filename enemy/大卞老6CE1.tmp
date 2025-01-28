@@ -1,0 +1,110 @@
+[gd_scene load_steps=23 format=3 uid="uid://chjdyp1bq6ahn"]
+
+[ext_resource type="Script" path="res://enemy/大卞老师.gd" id="1_03vgi"]
+[ext_resource type="Texture2D" uid="uid://bp8p5vfb114jn" path="res://素材/大卞老师/常态/frame_0001.png" id="1_qptqn"]
+[ext_resource type="Texture2D" uid="uid://bg241agvqqo6j" path="res://素材/大卞老师/常态/frame_0002.png" id="2_eic34"]
+[ext_resource type="Texture2D" uid="uid://ddy0jfetd3rka" path="res://素材/大卞老师/常态/frame_0003.png" id="3_7jfuj"]
+[ext_resource type="Texture2D" uid="uid://dgekbm4nvdjt2" path="res://素材/大卞老师/常态/frame_0004.png" id="4_edhdo"]
+[ext_resource type="Texture2D" uid="uid://b2bd7580bv8tc" path="res://素材/大卞老师/常态/frame_0005.png" id="5_kg1hk"]
+[ext_resource type="Texture2D" uid="uid://dewagwevjx30a" path="res://素材/大卞老师/常态/frame_0006.png" id="6_ecn2k"]
+[ext_resource type="Texture2D" uid="uid://32rqisuquvti" path="res://素材/大卞老师/常态/frame_0007.png" id="7_phfrr"]
+[ext_resource type="Texture2D" uid="uid://cbqoa6cq0qapc" path="res://素材/大卞老师/常态/frame_0008.png" id="8_1vqcx"]
+[ext_resource type="Texture2D" uid="uid://cqxi8l03fvvrm" path="res://素材/大卞老师/常态/frame_0009.png" id="9_xbwu3"]
+[ext_resource type="Texture2D" uid="uid://dbqguseonhygj" path="res://素材/大卞老师/常态/frame_0010.png" id="10_n85mk"]
+[ext_resource type="Texture2D" uid="uid://d230hwdtvlwii" path="res://素材/大卞老师/常态/frame_0011.png" id="11_c844b"]
+[ext_resource type="Texture2D" uid="uid://osijjwisr7f0" path="res://素材/大卞老师/常态/frame_0012.png" id="12_ynbvq"]
+[ext_resource type="Texture2D" uid="uid://beqby7qlumux8" path="res://素材/大卞老师/常态/frame_0013.png" id="13_l7pp8"]
+[ext_resource type="Texture2D" uid="uid://c7faklmestpe3" path="res://素材/大卞老师/常态/frame_0014.png" id="14_i0lo3"]
+[ext_resource type="Texture2D" uid="uid://c7mfbyq8qu8q8" path="res://素材/大卞老师/常态/frame_0015.png" id="15_gulpq"]
+[ext_resource type="Texture2D" uid="uid://dwdx013n75v6x" path="res://素材/大卞老师/常态/frame_0016.png" id="16_2yahn"]
+[ext_resource type="Texture2D" uid="uid://sx66ulp728gj" path="res://素材/大卞老师/常态/frame_0017.png" id="17_nypv3"]
+[ext_resource type="Texture2D" uid="uid://cu7n4yq7f482i" path="res://素材/大卞老师/常态/frame_0018.png" id="18_1mdhl"]
+[ext_resource type="Texture2D" uid="uid://cueh8vsobiikk" path="res://素材/大卞老师/常态/frame_0019.png" id="19_idw3a"]
+[ext_resource type="Texture2D" uid="uid://cw0ow41iqdggi" path="res://素材/大卞老师/常态/frame_0020.png" id="20_0h1nc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fx60s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qptqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_eic34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7jfuj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_edhdo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kg1hk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ecn2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_phfrr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1vqcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xbwu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_n85mk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_c844b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ynbvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_l7pp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_i0lo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_gulpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2yahn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_nypv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_1mdhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_idw3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_0h1nc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"哭",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"打自己脸",
+"speed": 5.0
+}]
+
+[node name="大卞老师" type="CharacterBody2D"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_03vgi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fx60s")
+autoplay = "default"
+frame_progress = 0.683642

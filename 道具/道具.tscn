@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci475olc4yy8v"]
+
+[ext_resource type="Texture2D" uid="uid://bibkeu6w80yw2" path="res://icon.svg" id="1_0gvhq"]
+[ext_resource type="Script" path="res://道具/道具.gd" id="1_8eymx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wicq0"]
+size = Vector2(130, 35)
+
+[node name="道具" type="CharacterBody2D" groups=["floor"]]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_8eymx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0gvhq")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.19209e-06, 67.5)
+shape = SubResource("RectangleShape2D_wicq0")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

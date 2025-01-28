@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://crq7qsp8abakv"]
+
+[ext_resource type="VideoStream" path="res://素材/神之一手.ogv" id="1_c0bkc"]
+[ext_resource type="Script" path="res://UI/end.gd" id="1_wo3qp"]
+[ext_resource type="VideoStream" path="res://素材/柯洁坐着理论.ogv" id="3_mjw1x"]
+[ext_resource type="VideoStream" path="res://素材/柯洁站着理论.ogv" id="4_u5q7l"]
+
+[node name="end" type="CanvasLayer"]
+script = ExtResource("1_wo3qp")
+
+[node name="神之一手" type="VideoStreamPlayer" parent="."]
+clip_contents = true
+offset_right = 1280.0
+offset_bottom = 720.0
+stream = ExtResource("1_c0bkc")
+autoplay = true
+loop = true
+
+[node name="柯洁坐着理论" type="VideoStreamPlayer" parent="."]
+clip_contents = true
+offset_left = -44.0
+offset_top = 358.0
+offset_right = 1236.0
+offset_bottom = 1078.0
+scale = Vector2(0.5, 0.5)
+stream = ExtResource("3_mjw1x")
+autoplay = true
+loop = true
+
+[node name="柯洁站着理论" type="VideoStreamPlayer" parent="."]
+offset_left = -167.0
+offset_top = -20.0
+offset_right = 1113.0
+offset_bottom = 700.0
+scale = Vector2(0.5, 0.5)
+stream = ExtResource("4_u5q7l")
+autoplay = true
+loop = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -33.0
+offset_right = 36.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 134
+
+[node name="title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 75
+text = "很抱歉你被大卞老师抓到了把柄"
+
+[node name="button" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="start" type="Button" parent="VBoxContainer/button"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 65
+text = "重新开始
+"
+
+[node name="exit" type="Button" parent="VBoxContainer/button"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 65
+text = "愤怒退出"
+
+[connection signal="finished" from="神之一手" to="." method="_on_video_stream_player_finished"]
+[connection signal="pressed" from="VBoxContainer/button/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/button/exit" to="." method="_on_exit_pressed"]

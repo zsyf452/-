@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://b78rrpwq3ihfq"]
+
+[ext_resource type="Script" path="res://ui/playingGame_UI.gd" id="1_6egao"]
+[ext_resource type="PackedScene" uid="uid://d26irjurst7yn" path="res://ui/virtual_joypad.tscn" id="2_quiv2"]
+[ext_resource type="FontFile" uid="uid://o0g6c8ldydnv" path="res://resources/font/PixelAE-Bold.ttf" id="3_ebpxq"]
+
+[node name="playingGame_UI" type="CanvasLayer"]
+script = ExtResource("1_6egao")
+
+[node name="VirtualJoypad" parent="." instance=ExtResource("2_quiv2")]
+
+[node name="blood" type="HBoxContainer" parent="."]
+offset_right = 36.0
+offset_bottom = 16.0
+scale = Vector2(3, 3)
+alignment = 1
+
+[node name="score" type="Label" parent="."]
+offset_left = 936.0
+offset_top = 2.0
+offset_right = 1047.0
+offset_bottom = 74.0
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("3_ebpxq")
+theme_override_font_sizes/font_size = 48
+text = "1234"

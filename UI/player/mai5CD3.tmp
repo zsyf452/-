@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://cw6fn43tp62f"]
+
+[ext_resource type="Script" path="res://UI/player/main_ui.gd" id="1_twtux"]
+
+[node name="Control" type="CanvasLayer"]
+script = ExtResource("1_twtux")
+
+[node name="black_stones_count" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -158.0
+offset_right = -118.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="black_stones_count"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="black_stones_count"]
+layout_mode = 0
+offset_left = -34.0
+offset_right = 126.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 40
+text = "99999999"

@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3 uid="uid://bclya3dq4r6n"]
+
+[ext_resource type="Texture2D" uid="uid://xx6mvh75rqqj" path="res://素材/touch_screen/gdb-keyboard-2.png" id="1_m78il"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlac7"]
+atlas = ExtResource("1_m78il")
+region = Rect2(304, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgrj6"]
+atlas = ExtResource("1_m78il")
+region = Rect2(304, 320, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmn2t"]
+atlas = ExtResource("1_m78il")
+region = Rect2(336, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vegs1"]
+atlas = ExtResource("1_m78il")
+region = Rect2(336, 320, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y46gb"]
+atlas = ExtResource("1_m78il")
+region = Rect2(160, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nm5a"]
+atlas = ExtResource("1_m78il")
+region = Rect2(160, 288, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgdkm"]
+atlas = ExtResource("1_m78il")
+region = Rect2(112, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lgd3"]
+atlas = ExtResource("1_m78il")
+region = Rect2(112, 272, 16, 16)
+
+[node name="touch_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+metadata/_edit_horizontal_guides_ = [467.0]
+
+[node name="left" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 257.0
+offset_top = 358.0
+offset_right = 257.0
+offset_bottom = 358.0
+scale = Vector2(5, 5)
+
+[node name="left_move" type="TouchScreenButton" parent="left"]
+position = Vector2(-46.3333, 28)
+texture_normal = SubResource("AtlasTexture_jlac7")
+texture_pressed = SubResource("AtlasTexture_rgrj6")
+action = "ui_left"
+visibility_mode = 1
+
+[node name="right_move" type="TouchScreenButton" parent="left"]
+position = Vector2(-25.3333, 28)
+texture_normal = SubResource("AtlasTexture_fmn2t")
+texture_pressed = SubResource("AtlasTexture_vegs1")
+action = "ui_right"
+visibility_mode = 1
+
+[node name="right" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 946.0
+offset_top = 322.0
+offset_right = 946.0
+offset_bottom = 322.0
+scale = Vector2(5, 5)
+
+[node name="jump" type="TouchScreenButton" parent="right"]
+position = Vector2(-2, 18)
+texture_normal = SubResource("AtlasTexture_y46gb")
+texture_pressed = SubResource("AtlasTexture_7nm5a")
+action = "ui_accept"
+visibility_mode = 1
+
+[node name="run" type="TouchScreenButton" parent="right"]
+position = Vector2(19, 32)
+texture_normal = SubResource("AtlasTexture_sgdkm")
+texture_pressed = SubResource("AtlasTexture_8lgd3")
+action = "accelerate"
+visibility_mode = 1
