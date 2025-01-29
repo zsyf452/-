@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cv3dfqris2u1y"]
+[gd_scene load_steps=5 format=3 uid="uid://cv3dfqris2u1y"]
 
 [ext_resource type="PackedScene" uid="uid://ci475olc4yy8v" path="res://道具/道具.tscn" id="1_jl5uw"]
 [ext_resource type="Script" path="res://道具/棋子(黑.gd" id="2_822jy"]
 [ext_resource type="Texture2D" uid="uid://cxhkjwr4qtu65" path="res://素材/黑棋子.png" id="3_0efpg"]
+[ext_resource type="AudioStream" uid="uid://25db5q1s2p0i" path="res://素材/音效/失败音效.mp3" id="4_7d0lr"]
 
 [node name="棋子(黑" instance=ExtResource("1_jl5uw")]
 script = ExtResource("2_822jy")
@@ -12,3 +13,9 @@ scene = "res://UI/end.tscn"
 texture = ExtResource("3_0efpg")
 
 [node name="Area2D" parent="." index="1" groups=["black_piece"]]
+
+[node name="FailAudioStream" type="AudioStreamPlayer" parent="." index="2"]
+process_mode = 3
+stream = ExtResource("4_7d0lr")
+
+[connection signal="finished" from="FailAudioStream" to="." method="_on_fail_audio_stream_finished"]

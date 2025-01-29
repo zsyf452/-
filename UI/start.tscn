@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfya278vfhgn0"]
+[gd_scene load_steps=8 format=3 uid="uid://bfya278vfhgn0"]
 
 [ext_resource type="Script" path="res://UI/start.gd" id="1_olrix"]
 [ext_resource type="VideoStream" path="res://素材/start.ogv" id="1_slo41"]
 [ext_resource type="Texture2D" uid="uid://cq1c3a0c8bl0k" path="res://素材/start_last_frame.png" id="3_a36gr"]
+[ext_resource type="AudioStream" uid="uid://wv128brv0sgm" path="res://素材/音乐/大力王-红豆椰子冰#2tWfpJ.mp3" id="4_5f0ph"]
 
 [sub_resource type="Animation" id="Animation_7cj52"]
 length = 0.001
@@ -101,6 +102,10 @@ text = "退出游戏"
 libraries = {
 "": SubResource("AnimationLibrary_u7g26")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_5f0ph")
+autoplay = true
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
 [connection signal="pressed" from="button/start" to="." method="_on_start_pressed"]

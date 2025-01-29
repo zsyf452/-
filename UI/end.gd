@@ -2,7 +2,9 @@ extends CanvasLayer
 
 
 
-
+func _ready():
+	get_tree().paused = false
+	
 
 func _on_video_stream_player_finished():
 	

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bla80gplfw060"]
+
+[ext_resource type="Shader" path="res://Shader/black_circle.gdshader" id="1_06fp7"]
+[ext_resource type="Script" path="res://场景/fail.gd" id="2_o1o5p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_exu2v"]
+shader = ExtResource("1_06fp7")
+shader_parameter/circle_size = 0.1
+shader_parameter/feather = 0.05
+shader_parameter/circle_position = Vector2(0.5, 0.5)
+shader_parameter/screen_width = 1920.0
+shader_parameter/screen_height = 1920.0
+
+[node name="fail" type="ColorRect"]
+material = SubResource("ShaderMaterial_exu2v")
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_o1o5p")

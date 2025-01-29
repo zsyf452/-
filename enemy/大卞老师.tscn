@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://chjdyp1bq6ahn"]
+[gd_scene load_steps=34 format=3 uid="uid://chjdyp1bq6ahn"]
 
 [ext_resource type="Script" path="res://enemy/大卞老师.gd" id="1_03vgi"]
 [ext_resource type="Texture2D" uid="uid://bp8p5vfb114jn" path="res://素材/大卞老师/常态/frame_0001.png" id="1_qptqn"]
@@ -30,6 +30,8 @@
 [ext_resource type="Texture2D" uid="uid://bpy74ovrrhpr4" path="res://素材/大卞老师/打脸/output_002.png" id="28_5rsh3"]
 [ext_resource type="Texture2D" uid="uid://ctrao2hix4ao7" path="res://素材/大卞老师/打脸/output_003.png" id="29_2janl"]
 [ext_resource type="Texture2D" uid="uid://yrqgempvqc88" path="res://素材/大卞老师/打脸/output_004.png" id="30_m2dok"]
+[ext_resource type="AudioStream" uid="uid://cesi3ne7nhrr2" path="res://素材/音效/哭.mp3" id="31_35sm5"]
+[ext_resource type="AudioStream" uid="uid://cvlr8w0kyykra" path="res://素材/音效/打脸.mp3" id="32_8lp08"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fx60s"]
 animations = [{
@@ -144,5 +146,14 @@ script = ExtResource("1_03vgi")
 sprite_frames = SubResource("SpriteFrames_fx60s")
 animation = &"打自己脸"
 autoplay = "default"
+
+[node name="sound_effects" type="Node2D" parent="."]
+
+[node name="cry" type="AudioStreamPlayer2D" parent="sound_effects"]
+stream = ExtResource("31_35sm5")
+volume_db = 5.0
+
+[node name="slap _face" type="AudioStreamPlayer2D" parent="sound_effects"]
+stream = ExtResource("32_8lp08")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

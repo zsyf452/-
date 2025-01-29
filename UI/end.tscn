@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://crq7qsp8abakv"]
+[gd_scene load_steps=6 format=3 uid="uid://crq7qsp8abakv"]
 
 [ext_resource type="VideoStream" path="res://素材/神之一手.ogv" id="1_c0bkc"]
 [ext_resource type="Script" path="res://UI/end.gd" id="1_wo3qp"]
 [ext_resource type="VideoStream" path="res://素材/柯洁坐着理论.ogv" id="3_mjw1x"]
 [ext_resource type="VideoStream" path="res://素材/柯洁站着理论.ogv" id="4_u5q7l"]
+[ext_resource type="AudioStream" uid="uid://dav5v5l6bagm3" path="res://素材/音乐/柯洁争论.mp3" id="5_rd0dr"]
 
 [node name="end" type="CanvasLayer"]
 script = ExtResource("1_wo3qp")
@@ -77,6 +78,10 @@ text = "重新开始
 layout_mode = 2
 theme_override_font_sizes/font_size = 65
 text = "愤怒退出"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_rd0dr")
+autoplay = true
 
 [connection signal="finished" from="神之一手" to="." method="_on_video_stream_player_finished"]
 [connection signal="pressed" from="VBoxContainer/button/start" to="." method="_on_start_pressed"]

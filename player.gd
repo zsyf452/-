@@ -11,6 +11,8 @@ var countPiece = 0
 #@warning_ignore("unused_signal")
 signal update_signal()
 
+@onready var sfx_place_stone = $sfx_place_stone
+
 func _ready():
 	# 获取视口的可见矩形
 	var viewport_rect = get_viewport().get_visible_rect()
@@ -60,6 +62,7 @@ func input(delta):
 @warning_ignore("unused_parameter")
 func _on_area_2d_area_entered(area):
 	countPiece += 1
+	sfx_place_stone.play()
 	emit_signal("update_signal")
 	pass # Replace with function body.
 

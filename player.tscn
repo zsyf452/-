@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtedd25ly5wti"]
+[gd_scene load_steps=6 format=3 uid="uid://dtedd25ly5wti"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_7h3a6"]
 [ext_resource type="Texture2D" uid="uid://cj1qovgccdo5r" path="res://素材/棋盒.png" id="2_415g4"]
+[ext_resource type="AudioStream" uid="uid://cbfqkqeldw7r0" path="res://素材/音效/棋子落地声.mp3" id="3_x6ppx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uo75k"]
 size = Vector2(156, 48.5)
@@ -27,5 +28,8 @@ collision_mask = 5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(3.5, -13)
 shape = SubResource("RectangleShape2D_p7ih6")
+
+[node name="sfx_place_stone" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_x6ppx")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

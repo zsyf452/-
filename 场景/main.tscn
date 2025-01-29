@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://biom4ccg71vhc"]
+[gd_scene load_steps=9 format=4 uid="uid://biom4ccg71vhc"]
 
 [ext_resource type="PackedScene" uid="uid://dtedd25ly5wti" path="res://player.tscn" id="1_dnawh"]
 [ext_resource type="Script" path="res://场景/main.gd" id="1_xcg15"]
 [ext_resource type="Texture2D" uid="uid://phmpsa2jsoxu" path="res://素材/背景_2.png" id="2_0hoic"]
 [ext_resource type="Texture2D" uid="uid://bibkeu6w80yw2" path="res://icon.svg" id="2_wy1uy"]
 [ext_resource type="PackedScene" uid="uid://chjdyp1bq6ahn" path="res://enemy/大卞老师.tscn" id="4_nixfx"]
+[ext_resource type="AudioStream" uid="uid://dh6ewb14867wp" path="res://素材/音乐/战斗时音乐.mp3" id="7_wyaqi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_njeaw"]
 texture = ExtResource("2_wy1uy")
@@ -167,5 +168,10 @@ autostart = true
 position = Vector2(310, 63)
 
 [node name="黑棋子" type="Node2D" parent="."]
+
+[node name="background_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_wyaqi")
+volume_db = -16.049
+autoplay = true
 
 [connection signal="timeout" from="difficulty_timer" to="." method="_on_difficulty_timer_timeout"]

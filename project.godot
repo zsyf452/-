@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="大卞老师整活"
-run/main_scene="res://UI/start.tscn"
+run/main_scene="res://场景/main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Fail="*res://场景/fail.tscn"
 
 [display]
 

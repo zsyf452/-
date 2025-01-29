@@ -10,7 +10,8 @@ var RIGHT_EDGE = 0
 
 
 func _ready():
-	
+	Fail.reset()
+	#Fail.start($player.position)
 	# 获取视口的可见矩形
 	var viewport_rect = get_viewport().get_visible_rect()
 	 # 获取左边界和右边界

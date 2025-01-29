@@ -8,6 +8,9 @@ const PROP = [
 
 @onready var anim = $AnimatedSprite2D
 
+@onready var cry = $sound_effects/cry
+@onready var slap_face = $"sound_effects/slap _face"
+
 var LEFT_EDGE = 0
 var RIGHT_EDGE = 0
 
@@ -52,10 +55,10 @@ func on_player_pickup_item():
 	match t:
 		0:
 			anim.play("哭")
+			cry.play()
 		1:
 			anim.play("打自己脸")
-	
-	
+			slap_face.play()
 	
 	pass
 	
