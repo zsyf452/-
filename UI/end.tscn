@@ -11,18 +11,21 @@ script = ExtResource("1_wo3qp")
 
 [node name="神之一手" type="VideoStreamPlayer" parent="."]
 clip_contents = true
-offset_right = 1280.0
-offset_bottom = 720.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 stream = ExtResource("1_c0bkc")
 autoplay = true
 loop = true
 
 [node name="柯洁坐着理论" type="VideoStreamPlayer" parent="."]
 clip_contents = true
-offset_left = -44.0
-offset_top = 358.0
-offset_right = 1236.0
-offset_bottom = 1078.0
+offset_left = 13.0
+offset_top = 710.0
+offset_right = 1293.0
+offset_bottom = 1430.0
 scale = Vector2(0.5, 0.5)
 stream = ExtResource("3_mjw1x")
 autoplay = true

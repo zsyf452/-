@@ -71,8 +71,8 @@ _data = {
 script = ExtResource("1_olrix")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1280.0
+offset_bottom = 720.0
 stream = ExtResource("1_slo41")
 autoplay = true
 
