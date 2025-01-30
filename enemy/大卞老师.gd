@@ -47,6 +47,8 @@ func move(end_position:int):
 	
 
 func add_difficulty():
+	if duration == 0.1:
+		return
 	duration -= 0.1 
 	pass
 	
