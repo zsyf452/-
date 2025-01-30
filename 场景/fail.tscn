@@ -5,11 +5,10 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1h4mx"]
 shader = ExtResource("2_mkeox")
-shader_parameter/circle_size = 10.0
+shader_parameter/circle_size = 1.0
 shader_parameter/feather = 0.0
-shader_parameter/circle_position = Vector2(0.2, 0.8)
-shader_parameter/screen_width = 1920.0
-shader_parameter/screen_height = 1080.0
+shader_parameter/circle_position = Vector2(960, 540)
+shader_parameter/screen_size = Vector2(1920, 1080)
 
 [node name="fail" type="CanvasLayer"]
 process_mode = 3

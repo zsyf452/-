@@ -6,6 +6,8 @@ extends "res://道具/道具.gd"
 
 func _on_area_2d_body_entered(body):
 	if(body.is_in_group("floor")):
+		Globals.endTime = Time.get_unix_time_from_system()
+		Globals.mainUI.visible = false
 		failAudioStream.play()
 		print(position)
 		Fail.start(position)

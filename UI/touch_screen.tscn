@@ -42,11 +42,11 @@ metadata/_edit_horizontal_guides_ = [467.0]
 [node name="left" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 257.0
-offset_top = 358.0
-offset_right = 257.0
-offset_bottom = 358.0
-scale = Vector2(5, 5)
+offset_left = 439.0
+offset_top = 640.0
+offset_right = 439.0
+offset_bottom = 640.0
+scale = Vector2(7, 7)
 
 [node name="left_move" type="TouchScreenButton" parent="left"]
 position = Vector2(-46.3333, 28)
@@ -65,11 +65,11 @@ visibility_mode = 1
 [node name="right" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 946.0
-offset_top = 322.0
-offset_right = 946.0
-offset_bottom = 322.0
-scale = Vector2(5, 5)
+offset_left = 1571.0
+offset_top = 622.0
+offset_right = 1571.0
+offset_bottom = 622.0
+scale = Vector2(7, 7)
 
 [node name="jump" type="TouchScreenButton" parent="right"]
 position = Vector2(-2, 18)

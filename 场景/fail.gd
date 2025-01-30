@@ -6,7 +6,7 @@ const Min = 0.1
 #@export var scene = "res://UI/end.tscn"
 
 func _ready():
-	#reset()
+	reset()
 	#start(Vector2(310,561.7503))
 	pass
 
@@ -15,6 +15,8 @@ func reset():
 	var shader_material = picture.material as ShaderMaterial
 	#shader_material.set_shader_parameter("circle_position",Vector2(0.5,0.5))
 	shader_material.set_shader_parameter("circle_size",10)
+	#shader_material.set_shader_param("screen_width", get_viewport().size.x)
+	#shader_material.set_shader_param("screen_height", get_viewport().size.y)	
 	
 
 func start(p:Vector2):
@@ -29,15 +31,15 @@ func start(p:Vector2):
 	var position_y = p.y
 	
 	# 将 x 和 y 映射到 [0, 1] 的范围
-	var normalized_x = map_range(position_x, 0, max_width, 0, 1)
-	var normalized_y = map_range(position_y, 0, max_height, 0, 1)
+	#var normalized_x = map_range(position_x, 0, max_width, 0, 1)
+	#var normalized_y = map_range(position_y, 0, max_height, 0, 1)
 	
-	print("Normalized X:", normalized_x)
-	print("Normalized Y:", normalized_y)
+	#print("Normalized X:", normalized_x)
+	#print("Normalized Y:", normalized_y)
 	#将黑圈焦点移动至目标位置
 	var shader_material = picture.material as ShaderMaterial
 	shader_material.set_shader_parameter("circle_size",0.9)
-	shader_material.set_shader_parameter("circle_position",Vector2(normalized_x,normalized_y))
+	shader_material.set_shader_parameter("circle_position",Vector2(position_x,position_y))
 	
 	var tween = create_tween()
 	await tween.tween_property(shader_material, "shader_parameter/circle_size", 0.1, 0.5).finished

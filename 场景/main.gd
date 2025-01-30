@@ -18,9 +18,9 @@ func _ready():
 	LEFT_EDGE = viewport_rect.position.x
 	RIGHT_EDGE = viewport_rect.position.x + viewport_rect.size.x
 	
-	print(daBian.position.x)
+	#print(daBian.position.x)
 	daBian.move(320)
-	
+	Globals.startTime = Time.get_unix_time_from_system()
 
 
 func _on_difficulty_timer_timeout():

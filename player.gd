@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const ACCELERATE_SPEED = 1500.0
+const ACCELERATE_SPEED = 2000.0
 const JUMP_VELOCITY = -400.0
 var LEFT_EDGE = 0
 var RIGHT_EDGE = 0
@@ -20,7 +20,9 @@ func _ready():
 	LEFT_EDGE = viewport_rect.position.x
 	RIGHT_EDGE = viewport_rect.position.x + viewport_rect.size.x
 	
-	add_child(preload("res://UI/player/mainUI.tscn").instantiate())
+	var ui = preload("res://UI/player/mainUI.tscn").instantiate()
+	add_child(ui)
+	Globals.mainUI = ui
 	emit_signal("update_signal")
 
 func _physics_process(delta):
@@ -62,6 +64,7 @@ func input(delta):
 @warning_ignore("unused_parameter")
 func _on_area_2d_area_entered(area):
 	countPiece += 1
+	Globals.countPiece = countPiece
 	sfx_place_stone.play()
 	emit_signal("update_signal")
 	pass # Replace with function body.
